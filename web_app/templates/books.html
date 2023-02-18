@@ -1,32 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Twitoff App</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-    <div class="container">
-        <div id="nav">
-            <h1><a href="/new_book">My Web App</a></h1>
-        </div>
-    </div>
+{% block content %}
 
-    <h1>{{message}}</h1>
-    <p> Here are my books</p>
-    <ul>
-    {% for i in range(6) %}
-        <li>{{i}}</li>
-    {% endfor %}    
-    </ul>
+    <h2>Welcome to the Book Page</h2>
+    <p> {{ message }}</p>
 
-    <div id="footer">
-        <hr>
-        &copy; Copyright 2023 Nour Etienne Huens de Brouwer |
-        <a href="https://github.com/nouretienne">source</a>
-    </div>
-
-</body>
-</html>
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>{{book["title"]}}</li>
+            {% endfor %}    
+        </ul>
+    {% else %}
+        <p>Books not found.</p>
+    {% endif %}
+{% endblock %}
