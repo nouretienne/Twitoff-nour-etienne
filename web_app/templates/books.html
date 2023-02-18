@@ -7,13 +7,12 @@
     <title>My Twitoff App</title>
 </head>
 <body>
-    <h1>message:</h1>
+    <h1>{{message}}</h1>
     <p> Here are my books</p>
     <ul>
-        <li>Book A</li>
-        <li>Book B</li>
-        <li>Book C</li>
-        <li>Book D</li>
+    {% for i in range(5) %}
+        <li>{{i}}</li>
+    {% endfor %}    
     </ul>
 
 </body>
