@@ -21,3 +21,8 @@ def list_for_humans():
     return render_template("books.html", message="Here's some books", books=books)
 
 
+@book_routes.route('/new_book')
+def create_book():
+    return render_template("new_book.html")
+
+
