@@ -28,9 +28,7 @@ def parse_records(database_records):
     """
     parse_records = []
     for record in database_records:
-        print('record:',record)
         parse_record = record.__dict__
-        print('parsed_record["_sa_instance_state"]', parse_record["_sa_instance_state"])
-        del parsed_record["_sa_instance_state"]
+        del parse_record["_sa_instance_state"]
         parse_records.append(parse_record)
     return parse_records
