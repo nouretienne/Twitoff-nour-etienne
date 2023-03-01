@@ -20,3 +20,6 @@ flask db upgrade
 set FLASK_APP = hello.py
 flask run
 ```
+
+# To read the stocks_service.py
+python web_app/services/stocks_service.py
